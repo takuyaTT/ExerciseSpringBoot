@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Sample JPA Page</title>
+</head>
+<body>
+	<h1>SAMPLE JPA</h1>
+	<h2 th:text="${msg}">sample</h2>
+	<table border="1">
+		<tr><th>ID</th><th>NAME</th><th>AGE</th><th>GENDER</th></tr>
+			<tr  th:each="obj : ${costomer}">
+			<td th:text="${obj.id}"></td>
+			<td th:text="${obj.name}"></td>
+			<td th:text="${obj.age}"></td>
+			<td th:text="${obj.gender}"></td>
+		</tr>
+	</table>
+</body>
+</html>
