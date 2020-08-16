@@ -34,4 +34,46 @@ public class CustomerDaoImpl implements CustomerDao<CustomerData> {
         entityManager.close();
         return list;
     }
+
+    /*
+    @Override
+    @SuppressWarnings("unchecked")
+    public List<CustomerData> find(String findstr) {
+        List<CustomerData> list = null;
+        String qstr = "from CustomerData where id = :fid or name like :fname or mail like :fmail";
+        Long fid = 0L;
+        try{
+            fid = Long.parseLong(findstr);
+        }catch(NumberFormatException e){
+            e.printStackTrace();
+        }
+        Query query = entityManager.createQuery(qstr).setParameter("fid",fid).setParameter("fname","%" + findstr +"%").setParameter("fmail",findstr + "@%");
+        list = query.getResultList();
+        return list;
+    }
+    */
+
+    @SuppressWarnings("unchecked")
+    @Override
+    public List<CustomerData> find(String findstr) {
+        List<CustomerData> list = null;
+        Long fid = 0L;
+        try{
+            fid = Long.parseLong(findstr);
+        }catch(NumberFormatException e){}
+        Query query = entityManager.createNamedQuery("findWithName").setParameter("fname", "%" + findstr + "%");
+        list = query.getResultList();
+        return list;
+    }
+
+    @Override
+    public CustomerData findById(long id) {
+        return (CustomerData) entityManager.createQuery("from CustomerData where id = " + id).getSingleResult();
+    }
+
+    @Override
+    @SuppressWarnings("uncheckd")
+    public List<CustomerData> findByName(String name) {
+        return (List<CustomerData>)entityManager.createQuery("from CustomerData where name = " + name).getResultList();
+    }
 }

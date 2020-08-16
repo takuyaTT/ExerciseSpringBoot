@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/BootMavenDaoSample/BootMavanDaoSample.iml" filepath="$PROJECT_DIR$/BootMavenDaoSample/BootMavanDaoSample.iml" />
+      <module fileurl="file://$PROJECT_DIR$/BootMavenSample/BootMavanSample.iml" filepath="$PROJECT_DIR$/BootMavenSample/BootMavanSample.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/ExerciseSpringBoot.iml" filepath="$PROJECT_DIR$/.idea/ExerciseSpringBoot.iml" />
+    </modules>
+  </component>
+</project>
